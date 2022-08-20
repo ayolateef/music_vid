@@ -200,13 +200,15 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    'Defination',
+                    'Definition',
                     style: kBoldTextStyle,
                   ),
+                  SizedBox(height: 10,),
                   const Text(
-                    'Amor(noun)',
+                    'Amor (noun)',
                     style: kTextStyle,
                   ),
+                  SizedBox(height: 10,),
                   const Text(
                     'a secret or illicit love affair or lover.',
                     style: kTextStyle,
