@@ -27,7 +27,7 @@ class Page2 extends StatelessWidget {
                   onTap: (() {
                     Navigator.pop(context);
                   }),
-                  child: const CardWidget(
+                  child:  CardWidget(
                     color: kCardColor,
                     icon: Icons.arrow_back,
                     IconSize: kIconSize2,
@@ -38,7 +38,7 @@ class Page2 extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children:  [
                     Text(
                       'English',
                       style: kBoldTextStyle,
@@ -46,7 +46,8 @@ class Page2 extends StatelessWidget {
                     CardWidget(
                       color: kCardColor,
                       icon: FontAwesomeIcons.arrowRightArrowLeft,
-                      IconSize: kIconSize,
+                      IconSize: 12,
+                      padding: EdgeInsets.all(15),
                     ),
                     Text(
                       'Spanish',
@@ -71,11 +72,9 @@ class Page2 extends StatelessWidget {
                             Row(
                               children:  [
                                 InkWell(
-                                  onTap: (() {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => 
-                                    const Page3()
-                                    ));
-                                  }),
+                                  onTap: () {
+
+                                  },
                                   child: const Icon(
                                     Icons.arrow_forward,
                                     color: kIconColor,
@@ -99,8 +98,8 @@ class Page2 extends StatelessWidget {
                     const SizedBox(
                   height: 20.0,
                 ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 100),
+                Center(
+
                   child: Image.asset(
                     'images/sound-waves.png',
                     height: 100.0,
@@ -108,20 +107,22 @@ class Page2 extends StatelessWidget {
                   ),
                 ),
                   const SizedBox(height: 20.0,),
-                Container(
-                   margin: const EdgeInsets.symmetric(horizontal: 100),
-                  height: 120,
-                  width: 120,
-                  child: Card(
-                    color: Color(0xffFF4F6C),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(80)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        'images/mic.png',
-                        color: Colors.white,
-                        scale: 10,
+                Center(
+                  child: SizedBox(
+
+                    height: 120,
+                    width: 120,
+                    child: Card(
+                      color: Color(0xffFF4F6C),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(80)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          'images/mic.png',
+                          color: Colors.white,
+                          scale: 10,
+                        ),
                       ),
                     ),
                   ),

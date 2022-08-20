@@ -4,25 +4,34 @@ class CardWidget extends StatelessWidget {
   final Color color;
   final IconData icon;
   final double IconSize;
+  final VoidCallback? onTap;
+  final EdgeInsets? padding;
 
-  const CardWidget(
+   CardWidget(
       {super.key,
       required this.color,
       required this.icon,
-      required this.IconSize});
+      required this.IconSize,
+      this.padding,
+       this.onTap
+
+      });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      color: color,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Icon(
-          icon,
-          size: IconSize,
-           color: const Color(0xff884ad7),
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 5,
+        color: color,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+        child: Padding(
+          padding:  padding ?? const EdgeInsets.all(10.0),
+          child: Icon(
+            icon,
+            size: IconSize,
+             color: const Color(0xff884ad7),
+          ),
         ),
       ),
     );

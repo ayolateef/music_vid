@@ -23,7 +23,7 @@ class Page3 extends StatelessWidget {
               onTap: (() {
                 Navigator.pop(context);
               }),
-              child: const CardWidget(
+              child:  CardWidget(
                 color: kCardColor,
                 icon: Icons.arrow_back,
                 IconSize: kIconSize2,
@@ -34,7 +34,7 @@ class Page3 extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children:  [
                 Text(
                   'English',
                   style: kBoldTextStyle,
@@ -42,7 +42,8 @@ class Page3 extends StatelessWidget {
                 CardWidget(
                   color: kCardColor,
                   icon: FontAwesomeIcons.arrowRightArrowLeft,
-                  IconSize: kIconSize,
+                  IconSize: 12,
+                  padding: EdgeInsets.all(15),
                 ),
                 Text(
                   'Spanish',
@@ -55,51 +56,51 @@ class Page3 extends StatelessWidget {
             ),
             Container(
               width: double.infinity,
-              height: 500.0,
+              height: MediaQuery.of(context).size.height * 0.6,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover, image: AssetImage('images/street.jpeg')),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
             ),
             
+SizedBox(height: 20),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                    CardWidget(
+                    color: kCardColor,
+                    icon: Icons.flash_off_outlined,
+                    IconSize: kIconSize
+                    ),
 
-            Container(
-              margin: EdgeInsets.only(top: 20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                     const CardWidget(
+
+
+
+                    Row(
+
+                  children: const [
+                    CardWidget2(
+                      color: Color(0xffFF4F6C),
+                      cardChild: Icon(
+                        Icons.camera_alt,
+                        size: kIconSize3,
+                        color: Color(0xffFBF6FD),
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    CardWidget2(
                       color: kCardColor,
-                      icon: Icons.flash_off_outlined,
-                      IconSize: kIconSize
+                      cardChild: Icon(
+                        Icons.picture_in_picture_outlined,
+                        size: kIconSize3,
+                        color: kIconColor,
                       ),
-                      const SizedBox(width: 60,),
-                      Row(
-                    
-                    children: const [
-                      CardWidget2(
-                        color: Color(0xffFF4F6C),
-                        cardChild: Icon(
-                          Icons.camera_alt,
-                          size: kIconSize3,
-                          color: Color(0xffFBF6FD),
-                        ),
-                      ),
-                      SizedBox(width: 10,),
-                      CardWidget2(
-                        color: kCardColor,
-                        cardChild: Icon(
-                          Icons.picture_in_picture_outlined,
-                          size: kIconSize3,
-                          color: kIconColor,
-                        ),
-                      )
-                    ],
-                  )
-                   ],),
-            ),
+                    )
+                  ],
+                )
+                 ],),
                  
            
           ]),

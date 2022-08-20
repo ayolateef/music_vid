@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_demo_app/views/page2.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:music_demo_app/views/page3.dart';
 import '../constants.dart';
 import '../model/container_widget.dart';
 import '../model/home_page_info.dart';
@@ -63,7 +64,7 @@ class HomePage extends StatelessWidget {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children:  [
                       Text(
                         'English',
                         style: kBoldTextStyle,
@@ -71,7 +72,8 @@ class HomePage extends StatelessWidget {
                       CardWidget(
                         color: kCardColor,
                         icon: FontAwesomeIcons.arrowRightArrowLeft,
-                        IconSize: kIconSize,
+                        IconSize: 12,
+                        padding: EdgeInsets.all(15),
                       ),
                       Text(
                         'Spanish',
@@ -99,29 +101,32 @@ class HomePage extends StatelessWidget {
                             )
                           ],
                         ),
-                        InkWell(
-                          onTap: (() {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const Page2()));
-                          }),
-                          child: const Icon(
-                            Icons.volume_up,
-                            color: kIconColor,
-                            size: kIconSize,
-                          ),
+                        const Icon(
+                          Icons.volume_up,
+                          color: kIconColor,
+                          size: kIconSize,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            CardWidget(
+                          children:  [
+                             CardWidget(
+                               onTap: (){
+                                 Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+                                 const Page3()
+                                 ));
+                               },
                                 color: kCardColor,
                                 icon: Icons.camera_alt,
                                 IconSize: kIconSize),
-                            CardWidget(
+                             CardWidget(
                                 color: kCardColor,
                                 icon: Icons.mode_edit_outline_outlined,
                                 IconSize: kIconSize),
                             CardWidget(
+                              onTap: (){
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const Page2()));
+                              },
                                 color: kCardColor,
                                 icon: FontAwesomeIcons.microphoneLines,
                                 IconSize: kIconSize)
@@ -158,11 +163,11 @@ class HomePage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children:  [
-                            const CardWidget(
+                             CardWidget(
                                 color: kCardColor,
                                 icon: Icons.open_in_new_rounded,
                                 IconSize: kIconSize),
-                            const CardWidget(
+                             CardWidget(
                                 color: kCardColor,
                                 icon: FontAwesomeIcons.message,
                                 IconSize: kIconSize),
